@@ -14,6 +14,8 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   flutter_screenutil: ^5.9.3
+  flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -42,3 +44,10 @@ flutter:
         - asset: assets/fonts/Satoshi-Regular.ttf
           weight: 300
           style: italic
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/splash_ios_android_12.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icons/play-store-icon-launcher.png"
