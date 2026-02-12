@@ -9,6 +9,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: .light,
     primaryColor: AppColors.primaryColor,
+    fontFamily: "satoshi",
     scaffoldBackgroundColor: AppColors.lightBackgroundColor,
 
     colorScheme: const .light(
@@ -73,6 +74,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: .dark,
     primaryColor: AppColors.primaryColor,
+    fontFamily: "satoshi",
     scaffoldBackgroundColor: AppColors.darkBackgroundColor,
 
     colorScheme: const .dark(
