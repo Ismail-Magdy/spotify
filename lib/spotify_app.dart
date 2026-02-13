@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spotify/core/themes/app_theme.dart';
+import 'package:spotify/features/get_started/presentation/screens/get_started_screen.dart';
 
 class SpotifyApp extends StatelessWidget {
   const SpotifyApp({super.key});
@@ -15,6 +16,7 @@ class SpotifyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
+          home: GetStartedScreen(),
         );
       },
     );
