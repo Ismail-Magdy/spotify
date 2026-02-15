@@ -7,6 +7,7 @@ class AppColors {
   static const Color whiteTextColor = Color(0XFFDADADA);
   static const Color lightGreyTextColor = Color(0XFFBEBEBE);
   static const Color bottomNavigationBarIconsColor = Color(0XFF808080);
+  static const Color iconBackgroundColor = Color(0x20FFFFFF);
   //
   // const Colors
   static const Color blackColor = Colors.black;
