@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify/core/helpers/app_texts.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -27,7 +28,7 @@ class CustomText extends StatelessWidget {
         color: color,
         fontSize: size,
         fontWeight: weight,
-        fontFamily: "satoshi",
+        fontFamily: AppTexts.fontFamily,
       ),
     );
   }

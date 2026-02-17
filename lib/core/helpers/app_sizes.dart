@@ -506,6 +506,7 @@ class AppSizes {
   //
   /// Width
   static final double w1 = 1.w;
+  static final double w1005 = 1.5.w;
   static final double w2 = 2.w;
   static final double w3 = 3.w;
   static final double w4 = 4.w;
