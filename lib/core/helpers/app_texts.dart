@@ -5,8 +5,11 @@ class AppTexts {
   static const String getStarted = "Get started";
   static const String chooseMode = "Choose Mode";
   static const String continueText = "Continue";
+  //
   static const String lightMode = "Light Mode";
   static const String darkMode = "darkMode";
   static const String spotifyIsProprietary =
       "Spotify is a proprietary Swedish audio\nstreaming and media services provider";
+  //
+  static const String fontFamily = "satoshi";
 }

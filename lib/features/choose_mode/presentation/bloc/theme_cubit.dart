@@ -17,6 +17,6 @@ class ThemeCubit extends HydratedCubit<ThemeMode> {
 
   @override
   Map<String, dynamic>? toJson(ThemeMode state) {
-    return {'theme_mode': state.index};
+    return {"theme_mode": state.index};
   }
 }
