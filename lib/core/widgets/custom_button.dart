@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify/core/helpers/app_sizes.dart';
 import 'package:spotify/core/themes/app_colors.dart';
+import 'package:spotify/core/themes/font_weight_helpers.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
 
 class CustomButton extends StatelessWidget {
@@ -18,9 +19,9 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       child: CustomText(
         text: text,
-        color: AppColors.whiteTextColor,
+        color: AppColors.mainWhiteTextColor,
         size: AppSizes.sp22,
-        weight: .bold,
+        weight: FontWeightHelper.bold,
       ),
     );
   }
