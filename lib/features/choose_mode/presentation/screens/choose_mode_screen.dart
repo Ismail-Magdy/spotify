@@ -41,7 +41,7 @@ class ChooseModeScreen extends StatelessWidget {
                   // Text
                   CustomText(
                     text: AppTexts.chooseMode,
-                    color: AppColors.whiteTextColor,
+                    color: AppColors.mainWhiteTextColor,
                     size: AppSizes.sp25,
                     weight: .bold,
                   ),

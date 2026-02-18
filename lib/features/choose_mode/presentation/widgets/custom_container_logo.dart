@@ -36,7 +36,7 @@ class CustomContainerLogo extends StatelessWidget {
         verticalSpace(17),
         CustomText(
           text: title,
-          color: AppColors.whiteTextColor,
+          color: AppColors.mainWhiteTextColor,
           size: AppSizes.sp17,
           weight: .w500,
         ),
