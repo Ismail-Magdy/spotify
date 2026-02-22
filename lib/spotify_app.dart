@@ -18,12 +18,17 @@ class SpotifyApp extends StatelessWidget {
         return BlocProvider(
           create: (_) => ThemeCubit(),
           child: BlocBuilder<ThemeCubit, ThemeMode>(
-            builder: (context, state) => MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: AppTheme.lightTheme,
-              darkTheme: AppTheme.darkTheme,
-              themeMode: state,
-              home: GetStartedScreen(),
+            builder: (context, state) => GestureDetector(
+              onTap: () {
+                FocusScope.of(context).unfocus();
+              },
+              child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                themeMode: state,
+                home: GetStartedScreen(),
+              ),
             ),
           ),
         );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spotify/core/helpers/app_images.dart';
 import 'package:spotify/core/helpers/app_sizes.dart';
-import 'package:spotify/core/helpers/app_texts.dart';
-import 'package:spotify/core/helpers/spacing.dart';
+import 'package:spotify/core/helpers/app_strings.dart';
+import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/themes/app_colors.dart';
 import 'package:spotify/core/widgets/custom_button.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
@@ -38,9 +38,9 @@ class GetStartedScreen extends StatelessWidget {
                   Spacer(),
                   // Text
                   CustomText(
-                    text: AppTexts.enjoyListeningToMusic,
+                    text: AppStrings.enjoyListeningToMusic,
                     color: AppColors.mainWhiteTextColor,
-                    size: AppSizes.sp25,
+                    size: 25,
                     weight: .bold,
                   ),
                   //
@@ -48,16 +48,16 @@ class GetStartedScreen extends StatelessWidget {
                   //
                   CustomText(
                     maxLines: 4,
-                    text: AppTexts.immerseYourself,
+                    text: AppStrings.immerseYourself,
                     color: AppColors.greyTextColor,
-                    size: AppSizes.sp17,
+                    size: 17,
                     weight: .normal,
                   ),
                   //
                   verticalSpace(37),
                   // Buttom
                   CustomButton(
-                    text: AppTexts.getStarted,
+                    text: AppStrings.getStarted,
                     onPressed: () {
                       Navigator.push(
                         context,

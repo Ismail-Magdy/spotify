@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotify/core/helpers/app_texts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:spotify/core/helpers/app_strings.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -26,9 +27,9 @@ class CustomText extends StatelessWidget {
       textAlign: textAlign,
       style: TextStyle(
         color: color,
-        fontSize: size,
+        fontSize: size.sp,
         fontWeight: weight,
-        fontFamily: AppTexts.fontFamily,
+        fontFamily: AppStrings.fontFamily,
       ),
     );
   }

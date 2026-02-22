@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify/core/helpers/app_sizes.dart';
-import 'package:spotify/core/helpers/spacing.dart';
+import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/themes/app_colors.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
 
@@ -37,7 +37,7 @@ class CustomContainerLogo extends StatelessWidget {
         CustomText(
           text: title,
           color: AppColors.mainWhiteTextColor,
-          size: AppSizes.sp17,
+          size: 17,
           weight: .w500,
         ),
       ],

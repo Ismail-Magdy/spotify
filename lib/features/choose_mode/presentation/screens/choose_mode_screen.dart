@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify/core/helpers/app_icons.dart';
 import 'package:spotify/core/helpers/app_images.dart';
 import 'package:spotify/core/helpers/app_sizes.dart';
-import 'package:spotify/core/helpers/app_texts.dart';
-import 'package:spotify/core/helpers/spacing.dart';
+import 'package:spotify/core/helpers/app_strings.dart';
+import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/themes/app_colors.dart';
 import 'package:spotify/core/widgets/custom_button.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
@@ -40,9 +40,9 @@ class ChooseModeScreen extends StatelessWidget {
                   Spacer(),
                   // Text
                   CustomText(
-                    text: AppTexts.chooseMode,
+                    text: AppStrings.chooseMode,
                     color: AppColors.mainWhiteTextColor,
-                    size: AppSizes.sp25,
+                    size: 25,
                     weight: .bold,
                   ),
                   //
@@ -53,14 +53,14 @@ class ChooseModeScreen extends StatelessWidget {
                     children: [
                       CustomContainerLogo(
                         icon: AppIcons.darkMode,
-                        title: AppTexts.darkMode,
+                        title: AppStrings.darkMode,
                         onTap: () {
                           context.read<ThemeCubit>().updateTheme(.dark);
                         },
                       ),
                       CustomContainerLogo(
                         icon: AppIcons.lightMode,
-                        title: AppTexts.lightMode,
+                        title: AppStrings.lightMode,
                         onTap: () {
                           context.read<ThemeCubit>().updateTheme(.light);
                         },
@@ -71,7 +71,7 @@ class ChooseModeScreen extends StatelessWidget {
                   verticalSpace(70),
                   // Buttom
                   CustomButton(
-                    text: AppTexts.continueText,
+                    text: AppStrings.continueText,
                     onPressed: () {
                       Navigator.push(
                         context,

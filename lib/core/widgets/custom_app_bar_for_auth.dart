@@ -7,29 +7,31 @@ import 'package:spotify/core/themes/app_colors.dart';
 
 class CustomAppBarForAuth extends StatelessWidget
     implements PreferredSizeWidget {
-  const CustomAppBarForAuth({super.key});
+  const CustomAppBarForAuth({super.key, this.isLogo = false});
+  final bool isLogo;
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
   Widget build(BuildContext context) {
     return AppBar(
       leading: Padding(
-        padding: .only(left: 20),
+        padding: .only(left: AppSizes.w20),
         child: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: CircleAvatar(
-            radius: 24,
+            radius: AppSizes.r24,
             backgroundColor: AppColors.arrowBackCircleColor,
             child: SvgPicture.asset(AppIcons.arrowBack),
           ),
         ),
       ),
-
-      title: Image.asset(
-        AppImages.logoIcon,
-        height: AppSizes.h33,
-        width: AppSizes.w108,
-      ),
+      title: isLogo
+          ? Image.asset(
+              AppImages.logoIcon,
+              height: AppSizes.h33,
+              width: AppSizes.w108,
+            )
+          : SizedBox.shrink(),
       centerTitle: true,
     );
   }

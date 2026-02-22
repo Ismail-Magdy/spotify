@@ -40,7 +40,7 @@ class CustomSmallButton extends StatelessWidget {
           child: CustomText(
             text: text,
             color: textColor,
-            size: AppSizes.sp19,
+            size: 19,
             weight: FontWeightHelper.medium,
           ),
         ),

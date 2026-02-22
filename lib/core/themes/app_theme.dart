@@ -13,11 +13,9 @@ class AppTheme {
       primary: AppColors.primaryColor,
       secondary: AppColors.blackColor,
       surface: AppColors.whiteColor,
-      background: AppColors.lightBackgroundColor,
       onPrimary: AppColors.whiteColor,
       onSecondary: AppColors.whiteColor,
       onSurface: AppColors.blackTextColor,
-      onBackground: AppColors.blackTextColor,
       error: Colors.redAccent,
     ),
 
@@ -62,13 +60,10 @@ class AppTheme {
     colorScheme: const ColorScheme.dark(
       primary: AppColors.primaryColor,
       secondary: AppColors.whiteColor,
-      surface:
-          AppColors.darkBottomNavigationBarIconsColor, // لون الكروت في الدارك
-      background: AppColors.darkBackgroundColor,
+      surface: AppColors.darkBottomNavigationBarIconsColor,
       onPrimary: AppColors.blackColor, // النص أسود فوق الأخضر عشان التباين
       onSecondary: AppColors.blackColor,
-      onSurface: AppColors.whiteColor, // النص أبيض
-      onBackground: AppColors.mainWhiteTextColor,
+      onSurface: AppColors.whiteColor,
       error: Colors.redAccent,
     ),
 
