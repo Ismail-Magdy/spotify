@@ -7,8 +7,8 @@ import 'package:spotify/core/helpers/app_strings.dart';
 import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/themes/app_colors.dart';
 import 'package:spotify/core/themes/font_weight_helpers.dart';
-import 'package:spotify/core/widgets/custom_app_bar_for_auth.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
+import 'package:spotify/features/auth/register/presentation/screens/register_screen.dart';
 import 'package:spotify/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 import 'package:spotify/features/login_or_signup/presentation/widgets/custom_small_button.dart';
 
@@ -18,7 +18,6 @@ class LoginOrSignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarForAuth(isLogo: false),
       body: Stack(
         children: [
           //
@@ -39,12 +38,24 @@ class LoginOrSignupScreen extends StatelessWidget {
           //
           Padding(
             padding: .symmetric(
-              horizontal: AppSizes.w25,
+              horizontal: AppSizes.w20,
               vertical: AppSizes.h40,
             ),
             child: Column(
               crossAxisAlignment: .center,
               children: [
+                //
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Align(
+                    alignment: .centerLeft,
+                    child: CircleAvatar(
+                      radius: AppSizes.r18,
+                      backgroundColor: AppColors.arrowBackCircleColor,
+                      child: SvgPicture.asset(AppIcons.arrowBack),
+                    ),
+                  ),
+                ),
                 verticalSpace(111),
                 // Logo
                 Image.asset(
@@ -79,7 +90,12 @@ class LoginOrSignupScreen extends StatelessWidget {
                   children: [
                     //
                     CustomSmallButton(
-                      onTap: () {},
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const RegisterScreen(),
+                        ),
+                      ),
                       text: AppStrings.register,
                       textColor: AppColors.mainWhiteTextColor,
                       buttonColor: AppColors.primaryColor,
@@ -89,7 +105,7 @@ class LoginOrSignupScreen extends StatelessWidget {
                     CustomSmallButton(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => SignInScreen()),
+                        MaterialPageRoute(builder: (_) => const SignInScreen()),
                       ),
                       text: AppStrings.signIn,
                       textColor: AppColors.blackTextColor,

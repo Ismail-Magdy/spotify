@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/helpers/app_icons.dart';
 import 'package:spotify/core/helpers/app_sizes.dart';
-import 'package:spotify/core/constants/spacing.dart';
 import 'package:spotify/core/helpers/app_strings.dart';
 import 'package:spotify/core/themes/app_colors.dart';
 import 'package:spotify/core/themes/font_weight_helpers.dart';
@@ -11,21 +11,21 @@ import 'package:spotify/core/widgets/custom_button.dart';
 import 'package:spotify/core/widgets/custom_divider.dart';
 import 'package:spotify/core/widgets/custom_text.dart';
 import 'package:spotify/core/widgets/custom_text_field.dart';
-import 'package:spotify/features/auth/register/presentation/screens/register_screen.dart';
+import 'package:spotify/features/auth/sign_in/presentation/screens/sign_in_screen.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
+  final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   //
   bool isAppear = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,16 +37,16 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               children: [
                 //
-                verticalSpace(70),
+                verticalSpace(20),
                 //
                 CustomText(
-                  text: AppStrings.signIn,
+                  text: AppStrings.register,
                   color: AppColors.blackTextColor,
                   size: AppSizes.sp30,
                   weight: FontWeightHelper.bold,
                 ),
                 //
-                verticalSpace(20),
+                verticalSpace(15),
                 // Two Texts
                 Row(
                   mainAxisAlignment: .center,
@@ -66,16 +66,25 @@ class _SignInScreenState extends State<SignInScreen> {
                   ],
                 ),
                 //
-                verticalSpace(35),
+                verticalSpace(25),
+                //
+                CustomTextField(
+                  controller: _fullNameController,
+                  obscureText: false,
+                  hintText: AppStrings.fullName,
+                  keyboardType: TextInputType.name,
+                ),
+                //
+                verticalSpace(15),
                 //
                 CustomTextField(
                   controller: _emailController,
                   obscureText: false,
-                  hintText: AppStrings.enterUsernameOrEmail,
+                  hintText: AppStrings.enterEmail,
                   keyboardType: TextInputType.emailAddress,
                 ),
                 //
-                verticalSpace(16),
+                verticalSpace(15),
                 //
                 CustomTextField(
                   controller: _passwordController,
@@ -99,27 +108,15 @@ class _SignInScreenState extends State<SignInScreen> {
                   keyboardType: TextInputType.text,
                 ),
                 //
-                verticalSpace(18),
+                verticalSpace(30),
                 //
-                Align(
-                  alignment: .centerLeft,
-                  child: CustomText(
-                    text: AppStrings.recoveryPassword,
-                    color: AppColors.blackTextColor,
-                    size: 14,
-                    weight: FontWeightHelper.medium,
-                  ),
-                ),
+                CustomButton(text: AppStrings.createAccount, onPressed: () {}),
                 //
-                verticalSpace(20),
-                //
-                CustomButton(text: AppStrings.signIn, onPressed: () {}),
-                //
-                verticalSpace(31),
+                verticalSpace(30),
                 //
                 CustomDivider(),
                 //
-                verticalSpace(35),
+                verticalSpace(32),
                 // Two Icons
                 Row(
                   mainAxisAlignment: .center,
@@ -137,7 +134,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   mainAxisAlignment: .center,
                   children: [
                     CustomText(
-                      text: AppStrings.notAMember,
+                      text: AppStrings.doYouHaveAnAccount,
                       color: AppColors.blackTextColor,
                       size: AppSizes.sp12,
                       weight: FontWeightHelper.medium,
@@ -145,12 +142,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     GestureDetector(
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (_) => const RegisterScreen(),
-                        ),
+                        MaterialPageRoute(builder: (_) => const SignInScreen()),
                       ),
                       child: CustomText(
-                        text: AppStrings.registerNow,
+                        text: AppStrings.signIn,
                         color: AppColors.blueColor,
                         size: AppSizes.sp14,
                         weight: FontWeightHelper.medium,

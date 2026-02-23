@@ -22,4 +22,11 @@ class AppStrings {
 
   static const String enterUsernameOrEmail = "Enter Username Or Email";
   static const String password = "Password";
+  static const String notAMember = "Not A Member ?";
+  static const String registerNow = " Register Now";
+
+  static const String fullName = "Full Name";
+  static const String enterEmail = "Enter Email";
+  static const String createAccount = "Create Account";
+  static const String doYouHaveAnAccount = "Do You Have An Account? ";
 }

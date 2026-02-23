@@ -7,6 +7,7 @@ class AppColors {
   static const Color bottomNavigationBarIconsColor = Color(0XFF808080);
   static const Color iconBackgroundColor = Color(0x20FFFFFF);
   static const Color arrowBackCircleColor = Color(0xFFE9E9E9);
+  static const Color blueColor = Color(0xFF288CE9);
   //
   static const Color greyTextColor = Color(0XFF797979);
   static const Color mainWhiteTextColor = Color(0XFFFFFFFF);

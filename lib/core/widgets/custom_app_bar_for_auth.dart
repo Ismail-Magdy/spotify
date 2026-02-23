@@ -7,8 +7,8 @@ import 'package:spotify/core/themes/app_colors.dart';
 
 class CustomAppBarForAuth extends StatelessWidget
     implements PreferredSizeWidget {
-  const CustomAppBarForAuth({super.key, this.isLogo = false});
-  final bool isLogo;
+  const CustomAppBarForAuth({super.key});
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
@@ -25,13 +25,11 @@ class CustomAppBarForAuth extends StatelessWidget
           ),
         ),
       ),
-      title: isLogo
-          ? Image.asset(
-              AppImages.logoIcon,
-              height: AppSizes.h33,
-              width: AppSizes.w108,
-            )
-          : SizedBox.shrink(),
+      title: Image.asset(
+        AppImages.logoIcon,
+        height: AppSizes.h33,
+        width: AppSizes.w108,
+      ),
       centerTitle: true,
     );
   }
