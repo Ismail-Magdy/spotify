@@ -8,26 +8,33 @@ class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
     required this.controller,
-    required this.obscureText,
     required this.hintText,
-    this.isEye = false,
-    required this.keyboardType,
-    this.suffixIcon = const SizedBox.shrink(),
+    this.isPassword = false,
+    this.keyboardType,
+    this.suffixIcon,
+    this.validator,
   });
 
   final TextEditingController controller;
-  final bool obscureText;
   final String hintText;
-  final bool isEye;
+  final bool isPassword;
   final TextInputType? keyboardType;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
+  final String? Function(String?)? validator;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  bool isAppear = false;
+  late bool isObscure;
+
+  @override
+  void initState() {
+    super.initState();
+    isObscure = widget.isPassword;
+  }
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -37,10 +44,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
       cursorErrorColor: AppColors.redColor,
       cursorWidth: AppSizes.w2,
       keyboardType: widget.keyboardType,
+      textInputAction: TextInputAction.next,
       maxLines: 1,
-      obscureText: widget.obscureText,
+      obscureText: isObscure,
       textAlignVertical: .center,
+      validator: widget.validator,
       enabled: true,
+      //
       style: TextStyle(
         overflow: .ellipsis,
         color: AppColors.blackTextColor,
@@ -48,41 +58,49 @@ class _CustomTextFieldState extends State<CustomTextField> {
         fontSize: AppSizes.sp16,
         fontFamily: AppStrings.fontFamily,
       ),
+      //
       decoration: InputDecoration(
         contentPadding: .symmetric(
           vertical: AppSizes.h30,
           horizontal: AppSizes.w20,
         ),
+        //
+        suffixIcon: widget.isPassword
+            ? IconButton(
+                icon: Icon(
+                  isObscure ? Icons.visibility_off : Icons.visibility,
+                  color: AppColors.greyTextColor,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isObscure = !isObscure;
+                  });
+                },
+              )
+            : widget.suffixIcon,
+        //
         enabledBorder: OutlineInputBorder(
           borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.greyColor),
+          borderSide: const BorderSide(color: AppColors.greyColor),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.greyTextColor),
+          borderSide: const BorderSide(color: AppColors.greyTextColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.greyColor),
+          borderSide: const BorderSide(color: AppColors.primaryColor),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.greyColor),
+          borderRadius: BorderRadius.circular(AppSizes.r30),
+          borderSide: const BorderSide(color: AppColors.redColor),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.redColor),
+          borderRadius: BorderRadius.circular(AppSizes.r30),
+          borderSide: const BorderSide(color: AppColors.redColor),
         ),
         hintText: widget.hintText,
-        hintStyle: TextStyle(
-          fontFamily: AppStrings.fontFamily,
-          color: AppColors.greyTextColor,
-        ),
-        suffixIcon: widget.suffixIcon,
-        border: OutlineInputBorder(
-          borderRadius: .circular(AppSizes.r30),
-          borderSide: BorderSide(color: AppColors.greyColor),
-        ),
+        hintStyle: const TextStyle(color: AppColors.greyTextColor),
       ),
     );
   }

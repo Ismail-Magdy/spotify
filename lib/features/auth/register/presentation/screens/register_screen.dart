@@ -70,42 +70,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 //
                 CustomTextField(
                   controller: _fullNameController,
-                  obscureText: false,
+                  isPassword: false,
                   hintText: AppStrings.fullName,
-                  keyboardType: TextInputType.name,
+                  keyboardType: .name,
                 ),
                 //
                 verticalSpace(15),
                 //
                 CustomTextField(
                   controller: _emailController,
-                  obscureText: false,
+                  isPassword: false,
                   hintText: AppStrings.enterEmail,
-                  keyboardType: TextInputType.emailAddress,
+                  keyboardType: .emailAddress,
                 ),
                 //
                 verticalSpace(15),
                 //
                 CustomTextField(
                   controller: _passwordController,
-                  obscureText: isAppear ? false : true,
                   hintText: AppStrings.password,
-                  isEye: true,
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        isAppear = !isAppear;
-                      });
-                    },
-                    child: Icon(
-                      isAppear
-                          ? Icons.remove_red_eye_outlined
-                          : Icons.visibility_off_outlined,
-                      color: AppColors.greyColor,
-                    ),
-                  ),
-
-                  keyboardType: TextInputType.text,
+                  isPassword: true,
+                  keyboardType: .text,
                 ),
                 //
                 verticalSpace(30),

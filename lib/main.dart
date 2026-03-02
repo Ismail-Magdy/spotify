@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:spotify/core/di/service_locator.dart';
 import 'package:spotify/firebase_options.dart';
 import 'package:spotify/spotify_app.dart';
 
@@ -12,6 +13,8 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   // Initialize FireBase
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // Dependency Injection
+  await setupServiceLocator();
   // Theming Of App
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: HydratedStorageDirectory(
