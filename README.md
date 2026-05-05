@@ -1,16 +1,40 @@
-# spotify
+# 🎵 Spotify Clone - Flutter Music Streaming App
 
-A new Flutter project.
+A full-stack, cross-platform music streaming application modeled after Spotify, providing users with a seamless and engaging audio entertainment experience. Built with a strong emphasis on scalable design patterns and robust error handling.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+* **User Authentication:** Secure Sign Up and Sign In using Firebase Auth.
+* **Music Streaming:** Persistent real-time audio playback using `just_audio`.
+* **Dynamic Theming:** Seamless switching between Dark and Light modes.
+* **Media Browsing:** Explore artists, albums, and playlists fetched directly from Firebase Firestore and Storage.
+* **Responsive UI:** Pixel-perfect, adaptive user interface with reusable custom widgets.
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠 Tech Stack & Architecture
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project is built using industry-standard tools and architectural patterns to ensure scalability, maintainability, and clean code.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* **Framework:** Flutter / Dart
+* **Architecture:** Clean Architecture (Feature-First approach)
+* **State Management:** Cubit (`flutter_bloc`)
+* **Dependency Injection:** `get_it`
+* **Error Handling & Functional Programming:** `dartz` (Either, Failures)
+* **Backend as a Service (BaaS):** Firebase (Auth, Cloud Firestore, Cloud Storage)
+* **Audio Engine:** `just_audio`
+
+## 🏗 Architecture Overview
+
+The application strictly follows **Clean Architecture** principles, divided into feature-based folders. Each feature (e.g., `auth`, `home`, `player`) is isolated and separated into three main layers:
+
+1. **Domain Layer:** The core business logic, containing `Entities`, `Repositories` (Interfaces), and `UseCases`. It is completely independent of any external libraries or Flutter SDK.
+2. **Data Layer:** Responsible for data retrieval and manipulation. It contains `Models`, `Data Sources` (Firebase API calls), and `Repository Implementations`.
+3. **Presentation Layer:** The UI and State Management. It contains `Screens`, `Widgets`, and `Cubits` that interact with the UseCases.
+
+```text
+lib/
+ ├── core/                  # Core configurations, constants, DI, and themes
+ └── features/              # Feature-first modules
+      └── auth/
+           ├── data/        # Models, RemoteDataSources, RepoImpls
+           ├── domain/      # Entities, Repositories, UseCases
+           └── presentation/# Screens, Widgets, Cubit
