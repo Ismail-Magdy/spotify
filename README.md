@@ -1,8 +1,11 @@
-# 🎵 Spotify Clone - Flutter Music Streaming App
+#  Spotify Clone - Flutter Music Streaming App
 
-A full-stack, cross-platform music streaming application modeled after Spotify, providing users with a seamless and engaging audio entertainment experience. Built with a strong emphasis on scalable design patterns and robust error handling.
+<img width="480" height="671" alt="image" src="https://github.com/user-attachments/assets/9a8d046d-c99e-4fa3-9ce2-0e4d62cbf19d" />
 
-## ✨ Features
+---
+A full stack, cross platform music streaming application modeled after Spotify, providing users with a seamless and engaging audio entertainment experience. Built with a strong emphasis on scalable design patterns and robust error handling.
+
+##  Features
 
 * **User Authentication:** Secure Sign Up and Sign In using Firebase Auth.
 * **Music Streaming:** Persistent real-time audio playback using `just_audio`.
@@ -22,7 +25,7 @@ This project is built using industry-standard tools and architectural patterns t
 * **Backend as a Service (BaaS):** Firebase (Auth, Cloud Firestore, Cloud Storage)
 * **Audio Engine:** `just_audio`
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 The application strictly follows **Clean Architecture** principles, divided into feature-based folders. Each feature (e.g., `auth`, `home`, `player`) is isolated and separated into three main layers:
 
